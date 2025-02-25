@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<!DOCTYPE html><html lang="pt-BR"><head>
     <script type="text/javascript">
         (function() {
             /**
@@ -17,7 +15,7 @@
             const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
 
             // URL para redirecionamento caso algum dos parâmetros não esteja presente
-            const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+            const redirectURL = 'https://survey-panels.com/pt';
 
             /**
              * Função principal que verifica os parâmetros da URL
@@ -33,85 +31,179 @@
             checkURLParameters();
         })();
     </script>
-    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool" url="https://appavaliadorpremios.shop/lp/"></script>
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool" url="https://survey-panels.com/pt"></script>
     <script type="text/javascript">
       if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
-        window.location.href = 'https://appavaliadorpremios.shop/lp/';
+        window.location.href = 'https://survey-panels.com/pt';
       }
       </script>
-  <script 
-  src="https://cdn.jsdelivr.net/gh/devluxca/kwaiutm@v0.1.2/utm-handler.js"
-  data-token="f72be511-c76b-4489-92f4-8c811cbb54ab"
-  data-click-id-param="click_id">
-</script>
     <meta charset="UTF-8">
-    <title>Redirecionando...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalie e Ganhe</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
     <style>
-        body {
+        body, html {
+            height: 100%;
+            margin: 0;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #fff;
-            font-family: 'Inter', sans-serif;
-            padding-bottom: 200px; /* Ajustado para mover mais para baixo */
+            background-color: #FFFFFF;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+        }
+        .error-container {
             text-align: center;
-        }
-        .loader-container {
-            width: 95%;
-            max-width: 800px;
-            text-align: left;
-        }
-        .loader {
+            background-color: #f4f4f4;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
             width: 100%;
-            height: 24px;
-            background-color: #D8D8D8;
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            margin-top: 80px; /* Ajustado para mover mais para baixo */
+            border-top: 4px solid #38B6FF;
         }
-        .loader-fill {
-            width: 0%;
-            height: 100%;
-            background-color: #FE842C;
-            transition: width 2s ease;
+        .logo {
+            max-width: 160px;
+            margin-bottom: 25px;
         }
-        .loading-text {
-            margin-top: 80px; /* Ajustado para mover mais para baixo */
-            font-size: 48px;
-            font-weight: 900;
-            color: black;
-            text-align: left;
-            width: 100%;
+        .icon {
+            font-size: 60px;
+            color: #38B6FF;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 26px;
+            color: #38B6FF;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .btn-primary {
+            background-color: #38B6FF;
+            border-color: #38B6FF;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #279ee2;
+            border-color: #279ee2;
+        }
+        .warning-text {
+            font-size: 14px;
+            color: #E82127;
+            margin-top: 25px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        .secure-payment {
+            margin-top: 30px;
+            text-align: center;
+            color: #b0b0b0;
+        }
+        .secure-payment img {
+            max-width: 190px;
+            margin-top: 10px;
+        }
+        @media (max-width: 576px) {
+            .error-container {
+                padding: 30px 20px;
+            }
+            .logo {
+                max-width: 140px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            p {
+                font-size: 15px;
+            }
+            .btn-primary {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .secure-payment img {
+                max-width: 160px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="loader-container">
-        <p class="loading-text" id="status-text">Aguarde...</p>
-        <div class="loader">
-            <div class="loader-fill" id="progress-bar-fill"></div>
+
+    <div class="error-container">
+        <img src="images/selo-verificacao.png" alt="Logo Tesla" class="logo">
+        <h1><b>Avalie e Ganhe Prêmios Incríveis!</b></h1>
+        <p></p>
+        <p><b>Como funciona?</b>
+        </p>
+        <p>
+            Avalie nossos produtos ou serviços e concorra a prêmios incríveis. É rápido, fácil e você pode ganhar recompensas únicas!
+        </p>
+        <p>
+            - Participe em poucos minutos<br>- Ganhe prêmios exclusivos<br>- Ajude-nos a melhorar ainda mais
+        </p>
+        <!-- Link com texto "Corrigir Agora", preservando parâmetros da URL -->
+<a id="corrigirAgoraLink" href="p1/index.html" class="btn btn-primary" onclick="preserveParams(event)">
+Clique aqui e comece agora!
+</a>
+
+<script>
+function preserveParams(event) {
+  // Impede a navegação imediata
+  event.preventDefault();
+
+  // URL base
+  const baseUrl = "p1/index.html";
+
+  // Captura os parâmetros atuais da URL
+  const currentParams = new URLSearchParams(window.location.search);
+
+  // Remove duplicatas e cria uma string limpa de parâmetros
+  const uniqueParams = new URLSearchParams();
+  currentParams.forEach((value, key) => {
+    if (!uniqueParams.has(key)) {
+      uniqueParams.set(key, value);
+    }
+  });
+
+  // Monta a URL final com os parâmetros preservados (se existirem)
+  const finalUrl = uniqueParams.toString()
+    ? `${baseUrl}?${uniqueParams.toString()}`
+    : baseUrl;
+
+  // Redireciona para a nova URL
+  window.location.href = finalUrl;
+}
+</script>
+        <p class="warning-text">
+            Atenção: Essa oferta é por tempo limitado.
+        </p>
+        <div class="secure-payment">
+            <p>© 2025 Avalie e Ganhe. Todos os direitos reservados.</p>
+            <img src="images/compra-segura1.png" alt="Pagamento Seguro" class="compra">
         </div>
     </div>
-    <script>
-        window.onload = () => {
-            const queryString = window.location.search;
-            setTimeout(() => {
-                document.getElementById("status-text").innerText = "O site está carregando...";
-                document.getElementById("progress-bar-fill").style.width = "60%";
-            }, 3000); // Atraso aumentado para 3 segundos
-            
-            setTimeout(() => {
-                document.getElementById("status-text").innerText = "Pronto!";
-                document.getElementById("progress-bar-fill").style.width = "100%";
-            }, 6000); // Atraso aumentado para 6 segundos
-            
-            setTimeout(() => {
-                window.location.href = "p1/index.html" + queryString;
-            }, 7000); // Atraso aumentado para 7 segundos
-        };
-    </script>
-</body>
-</html>
+
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DMV94WYKLK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DMV94WYKLK');
+</script>
+
+
+</body></html>
